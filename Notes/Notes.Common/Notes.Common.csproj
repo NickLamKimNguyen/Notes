@@ -82,6 +82,7 @@
     <Compile Include="Models\ValueObjects\Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\NoteDbContext.cs" />
     <Compile Include="Utils\AzureStorageUtil.cs" />
     <Compile Include="Utils\EmailUtil.cs" />

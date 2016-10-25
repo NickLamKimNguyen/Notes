@@ -9,8 +9,8 @@ namespace Notes.Common.Models.Entities
     public abstract class BaseEntity
     {
         public int Id { get; set; }
-        public DateTimeOffset CreatedAt { get; set; }
-        public DateTimeOffset ModifiedAt { get; set; }
-        public bool IsActive { get; set; }
+        public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset ModifiedAt { get; set; } = DateTimeOffset.Now;
+        public bool IsActive { get; set; } = true;
     }
 }
