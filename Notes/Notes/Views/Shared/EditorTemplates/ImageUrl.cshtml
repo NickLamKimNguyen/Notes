@@ -1,0 +1,12 @@
+﻿@model string
+@Html.HiddenFor(model => model)
+<input class="form-control" type="file" accept="image/*" name="image" value="" />
+@if (!string.IsNullOrWhiteSpace(Model))
+{
+    <br />
+    <div class="form-group">
+        <div class="col-md-10">
+            <img src="@Model" alt="Image" width="300" />
+        </div>
+    </div>
+}

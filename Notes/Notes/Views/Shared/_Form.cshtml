@@ -1,0 +1,38 @@
+﻿@using (Html.BeginForm(null, null, FormMethod.Post, (object)ViewBag.FormHtmlAttributes))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @if (Model != null && Model.Id > 0)
+        {
+            @Html.Hidden("Id")
+        }
+
+        @if (ViewBag.HiddenProperties != null)
+        {
+            foreach (var hiddenProperty in (string[])ViewBag.HiddenProperties)
+            {
+                @Html.Hidden(hiddenProperty)
+            }
+        }
+
+        @foreach (var property in (string[])ViewBag.Properties)
+        {
+            <div class="form-group">
+                @Html.Label(property, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.Editor(property)
+                    @Html.ValidationMessage(property, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

@@ -1,4 +1,6 @@
-﻿using Notes.Common.Models.Entities;
+﻿using Notes.Binders;
+using Notes.Common.Models.Entities;
+using Notes.Common.Models.Enums;
 using Notes.Common.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,7 @@ namespace Notes
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ModelBinders.Binders.Add(typeof(DaysOfTheWeek), new FlagEnumModelBinder<DaysOfTheWeek>());
         }
 
         protected void Application_Error(object sender, EventArgs e)

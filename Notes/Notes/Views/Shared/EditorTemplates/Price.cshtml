@@ -1,0 +1,6 @@
+﻿@using Notes.Common.Models.ValueObjects;
+@model Price
+
+@Html.TextBoxFor(model => model.Currency, new { @class = "form-control" })
+@Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })
+@Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })

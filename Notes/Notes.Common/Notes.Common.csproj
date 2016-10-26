@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Models\Entities\BaseEntity.cs" />
     <Compile Include="Models\Entities\Log.cs" />
+    <Compile Include="Models\Enums\DaysOfTheWeek.cs" />
     <Compile Include="Models\ValueObjects\Price.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />

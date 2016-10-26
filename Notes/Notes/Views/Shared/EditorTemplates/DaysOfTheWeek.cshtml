@@ -1,0 +1,18 @@
+﻿@using Notes.Common.Models.Enums;
+@model Enum
+@{
+    var items = from DaysOfTheWeek value in Enum.GetValues(typeof(DaysOfTheWeek)) select new { Value = value, Text = value.ToString() };
+}
+@foreach (var item in items)
+{
+    <label>
+        <input type="checkbox" name="DaysOfWeek" value="@item.Value"
+               @if (Model != null && Model.HasFlag(item.Value)) { @: checked
+                              } />
+        @item.Text
+    </label>
+    <br />
+}
+@Html.Hidden("")
+
+
