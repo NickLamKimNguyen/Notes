@@ -11,6 +11,7 @@ namespace Notes.Common.Repositories
 {
     internal class NoteDbContext : DbContext
     {
+        public DbSet<Note> Notes { get; set; }
         public DbSet<Log> Logs { get; set; }
 
         public NoteDbContext() : base("DefaultConnection")

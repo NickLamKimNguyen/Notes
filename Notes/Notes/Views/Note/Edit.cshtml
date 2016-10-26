@@ -1,0 +1,17 @@
+﻿@using Notes.Common.Models.Entities
+@model Note
+
+@{
+    ViewBag.Title = "Edit Note";
+    ViewBag.Description = "Update note";
+    ViewBag.FormHtmlAttributes = new { @enctype = "multipart/form-data" };
+    ViewBag.Properties = new string[] { "Title", "Description", "ImageUrl", "DaysOfWeek", "IsActive" };
+    ViewBag.HiddenProperties = new string[] { };
+}
+
+<div>
+    @Html.ActionLink("Back to Notes", "Index")
+</div>
+<br />
+
+@Html.Partial("_Form", Model, ViewData)
